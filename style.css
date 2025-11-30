@@ -1,0 +1,218 @@
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+  color: hsl(350, 20%, 40%);
+  margin: 0;
+  padding: 0;
+  font-family: font;
+}
+
+body{
+  background-color: hsl(349, 100%, 95%);
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@font-face {
+  font-family: font;
+  src: url(Hello\ Sister.otf);
+}
+
+#header{
+  background-color: transparent;
+  border: 0;
+  height: 60px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  outline: 0;
+  color: white;
+  background-color: pink;
+  border-radius: 30px;
+}
+#header::placeholder{
+  color: white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 75%;
+  max-width: 700px;
+  list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  padding-bottom: 4px;
+  font-size: 24px;
+  font-weight: 500;
+  transition: 0.2s;
+  /* border-radius: 15px; */
+  border-bottom: 3px solid pink;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  animation-name: popup;
+  animation-duration: 0.6s;
+  /* background-color: white; */
+  transform-origin: start;
+}
+/* @keyframes popup {
+  0%{transform: scale(0); opacity: 0; width: 0;}
+  30%{transform: scale(1.1);}
+  70%{transform: scale(0.99);}
+  100%{transform: scale(1); opacity: 1; width: 100%;}
+} */
+
+@keyframes popup {
+  0%{opacity: 0; /*width: 0;*/ transform: translateX(-100px);}
+  100%{opacity: 1;/* width: 100%;*/ transform: translateX(0px);}
+}
+
+/* ul li::before{
+  content: '';
+  position: absolute;
+  border-radius: 6px;
+  top: 13.6px;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  background-color: hsl(349, 100%, 95%);
+  border: 3px solid pink;
+} */
+
+ul li:hover {
+  color: hsl(0, 0%, 0%);
+}
+
+ul li.checked {
+  color: hsl(130, 50%, 75%);
+  color: hsla(350, 100%, 88%, 0.6);
+  text-decoration: line-through;
+}
+
+/* ul li.checked::after {
+  content: '✔';
+  position: absolute;
+  background-color: hsl(130, 75%, 50%);
+  top: 17px;
+  left: -24px;
+  height: 15px;
+  width: 15px;
+  animation-name: check;
+  animation-duration: 0.6s;
+  border-radius: 2.5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  box-shadow:
+  inset -1px -1px 2px 0 hsl(130, 75%, 40%),
+  inset 1px 1px 2px 0 hsl(130, 75%, 80%)
+  ;
+} */
+ul li.checked::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -30px;
+  height: 30px;
+  width: 30px;
+  animation-name: check;
+  animation-duration: 0.6s;
+  border-radius: 2.5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  background-image: url(tl.webp);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes check {
+  0%{
+    transform: rotate(180deg) scale(0);
+    border-radius: 7.5px;
+  }
+  30%{
+    transform: rotate(-9deg) scale(1.1);
+  }
+  70%{
+    transform: rotate(2deg) scale(0.97);
+  }
+  100%{
+    transform: rotate(0deg) scale(1);
+    border-radius: 2.5px;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  font-weight: 800;
+}
+
+.close:hover {
+  color: hsl(0, 50%, 50%);
+}
+
+
+
+#myInput {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  float: left;
+  height: 30px;
+  margin: 6px 0;
+  background-color: transparent;
+  position: relative;
+  padding: 8px;
+  padding-bottom: 4px;
+  font-size: 24px;
+  font-weight: 500;
+  outline: none;
+  border-radius: 24px;
+}
+#myInput::placeholder {
+  color: pink
+}
+#myInput:focus {
+ background-image: linear-gradient( to right, transparent 12px,white,transparent);
+ background-color: white;
+}
+
+.addBtn {
+  width: 42px;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0 15px 15px 0;
+    height: 42px;
+    line-height: 42px;
+    font-weight: 800;
+
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}

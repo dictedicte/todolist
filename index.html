@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#317EFB">
+
+</head>
+<body>
+        <h1><input type="text" id="header" placeholder="To Do List"></h1>
+
+    <ul id="myUL">
+        <li>breathe</li>
+        <li>hello</li>
+        <li>task</li>
+    </ul>
+
+        <input type="text" id="myInput" placeholder="Add task...">
+        <span onclick="newElement()" class="addBtn">+</span>
+    
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service worker registered"))
+        .catch(err => console.error("Service worker registration failed", err));
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
